@@ -16,7 +16,7 @@ test.describe('OrangeHRM Auth Sign-in - Test Suite', () => {
     await loginPage.step_clickLogin()
   })
 
-  test.only('Test - Auth Sign-in with Empty Credentials', async ({ loginPage, homePage }) => {
+  test('Test - Auth Sign-in with Empty Credentials', async ({ loginPage, homePage }) => {
     await loginPage.goto()
     await loginPage.step_enterUsername("Admin")
     await loginPage.step_enterPassword("wrongPassword")

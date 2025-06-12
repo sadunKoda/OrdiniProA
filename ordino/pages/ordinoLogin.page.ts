@@ -48,7 +48,7 @@ export class LoginPage {
     async step_clickForgetPassword() {
         await oi.ui(this.page).link(this.lbl_forgetPassword).click();
         // Wait for the page to load
-        await this.page.waitForTimeout(5000);
+        await this.page.waitForTimeout(500);
         return this;
     }
 } 
