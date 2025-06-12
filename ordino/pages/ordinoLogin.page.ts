@@ -9,6 +9,7 @@ export class LoginPage {
     private btn_login = "button[type='submit']";
     private loc_userDropdown = '.oxd-userdropdown-tab';
     private loc_logoutOption = '.oxd-dropdown-menu li:last-child';
+    private lbl_forgetPassword = ".orangehrm-login-forgot";
    
     page: Page;
     
@@ -42,5 +43,12 @@ export class LoginPage {
         await this.page.waitForTimeout(500);
         await oi.ui(this.page).button(this.loc_logoutOption).click();       
         return new LoginPage(this.page);
+    }
+
+    async step_clickForgetPassword() {
+        await oi.ui(this.page).link(this.lbl_forgetPassword).click();
+        // Wait for the page to load
+        await this.page.waitForTimeout(5000);
+        return this;
     }
 } 
